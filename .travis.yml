@@ -35,7 +35,7 @@ before_script:
     - sleep 5
     - curl http://selenium-release.storage.googleapis.com/2.41/selenium-server-standalone-2.41.0.jar > selenium.jar
     - java -jar selenium.jar > /dev/null &
-
+    - sleep 5
 
 script:
     - bin/phpunit -c app
