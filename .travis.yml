@@ -23,7 +23,7 @@ before_script:
     - app/console doctrine:database:create
     - app/console doctrine:schema:create
 
-    - sh -e Xvfb :99 -screen 0 1024x768x24 -ac +extension GLX +render -noreset > /dev/null &
+    - sh -e /etc/init.d/xvfb start
     - export DISPLAY=:99
     - curl http://selenium-release.storage.googleapis.com/2.41/selenium-server-standalone-2.41.0.jar > selenium.jar
     - java -jar selenium.jar > /dev/null &
