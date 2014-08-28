@@ -30,12 +30,16 @@ before_script:
     - app/console assets:install
     - app/console assetic:dump
 
+    - chmod -R 777 app/cache app/logs
+    - app/console --env=test cache:warmup
+    - chmod -R 777 app/cache app/logs
+
     - sh -e /etc/init.d/xvfb start
     - export DISPLAY=:99
     - sleep 5
     - curl http://selenium-release.storage.googleapis.com/2.41/selenium-server-standalone-2.41.0.jar > selenium.jar
     - java -jar selenium.jar > /dev/null &
-    - sleep 5
+    - sleep 15
 
 script:
     - bin/phpunit -c app
