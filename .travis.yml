@@ -20,7 +20,9 @@ before_script:
     - composer self-update
     - composer install --prefer-source --no-interaction
 
-    - sh -e bower install
+    - npm install -g bower
+    - bower install
+
     - app/console doctrine:database:create
     - app/console doctrine:schema:create
     - app/console assets:install
