@@ -23,7 +23,7 @@ before_script:
     - npm install -g bower
     - bower install
 
-    - curl https://github.com/yui/yuicompressor/releases/download/v2.4.8/yuicompressor-2.4.8.jar > bin/yuicompressor.jar
+    - curl -L https://github.com/yui/yuicompressor/releases/download/v2.4.8/yuicompressor-2.4.8.jar > bin/yuicompressor.jar
 
     - app/console doctrine:database:create
     - app/console doctrine:schema:create
