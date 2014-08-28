@@ -68,7 +68,7 @@ class CoreContext extends RawMinkContext implements Context
         $this->waitForXpathNode(".//*[contains(normalize-space(string(text())), \"$text\")]", $appear == 'appear');
     }
 
-    private function waitFor($fn, $timeout = 5000)
+    private function waitFor($fn, $timeout = 15000)
     {
         $start = microtime(true);
         $end = $start + $timeout / 1000.0;
